@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document Object Model:30 Days Of JavaScript</title>
+</head>
+
+<body>
+
+    <script>
+        // creating element
+        //
+        // let title = document.createElement('h1')
+        // title.className = 'title'
+        // title.style.fontSize = '24px'
+        // title.textContent = 'Creating HTML element DOM Day 2'
+
+        // console.log(title)
+
+        // creating multiple elements
+        //
+        let title
+        for (let i = 0; i < 3; i++) {
+            title = document.createElement('h1')
+            title.className = 'title'
+            title.id = i
+            title.style.fontSize = '50px'
+            title.textContent = i
+            //console.log(title)
+            //
+            // Appending child to a parent element
+            //
+            // To see a created element on the HTML 
+            // document we should append it to the 
+            // parent as a child element.
+            document.body.appendChild(title)
+        }
+
+        // Removing a child element from a parent node
+        // using removeChild() method
+        const body = document.querySelector('body')
+        const h1s = document.querySelectorAll('h1')
+
+        // for (const h1 of h1s){
+        //     body.removeChild(h1)
+        // }
+
+        // there is a better way to eliminate all the 
+        // inner HTML elements or the children of a 
+        // parent element using the method innerHTML 
+        // properties.
+        body.innerHTML = ""
+
+    </script>
+</body>
+
+</html>
