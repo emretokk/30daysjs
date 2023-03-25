@@ -1,0 +1,38 @@
+<!-- 
+How about if we want to get value without click the button. 
+We can use the change or input event type to get data
+right away from the input field when the field is on focus. 
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Document Object Model:30 Days Of JavaScript</title>
+  </head>
+
+  <body>
+    <h1>Giving feedback using blur event</h1>
+    <h2>Key events: Press any key</h2>
+    <input type="text" placeholder="say something" />
+
+    <p></p>
+
+    <script>
+      const input = document.querySelector('input')
+      const p = document.querySelector('p')
+
+      						//change
+      input.addEventListener('input', e => {
+        p.textContent = e.target.value
+      })
+
+      // Blur
+      input.addEventListener('blur', e=>{
+      	p.textContent = 'Field is required'
+      	p.style.color = 'red'
+      })
+      document.body.addEventListener('keypress', e => {
+        alert(e.keyCode)
+      })
+    </script>
+  </body>
+</html>
